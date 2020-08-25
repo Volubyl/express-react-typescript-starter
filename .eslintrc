@@ -2,6 +2,6 @@
     "env": {
         "jest": true
     },
-    "extends": ["airbnb-typescript-prettier"]
-
+    "extends": ["airbnb-typescript-prettier"],
+     "rules" : {"import/prefer-default-export" : "off"}
 }

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build",
+    "noImplicitAny": true,
+    "lib": ["ES2015"],
+    "allowJs": true,
+    "typeRoots" : ["./node_modules/@types", "./typings"]
+  },
+    "include": [
+  "src"
+],
+  "exclude": ["node_modules","build","scripts"]
+}

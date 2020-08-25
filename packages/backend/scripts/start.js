@@ -6,7 +6,7 @@ const path = require('path');
 
 const { log } = console;
 
-const ENV = process.env.ENV || 'developement';
+const ENV = process.env.NODE_ENV || 'developement';
 
 if (ENV === 'developement') {
   nodemon({

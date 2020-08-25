@@ -5,7 +5,8 @@
   "author": "Volubyl",
   "license": "MIT",
   "scripts": {
-    "prepare": "lerna bootstrap"
+    "prepare": "lerna bootstrap",
+    "start": "./scripts/start.sh"
   },
   "devDependencies": {
     "eslint": "^6.6.0",

@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  backend:
+    image: volubyl/markdown-proofreader-web/backend
+    build:
+      context: ./packages/backend
+    restart: always
+    ports:
+      - 9000:9000
+    environment:
+      - PORT=9000
+      - NODE_ENV=production
+  frontend:
+    image: volubyl/markdown-proofreader-web/frontend
+    build:
+      context: ./packages/frontend
+    ports:
+      - 3000:80
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    depends_on: 
+      - backend

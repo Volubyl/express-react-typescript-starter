@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  backend:
+    build:
+      context: ./packages/backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./packages/backend/src/:/user/app/src/
+      - ./packages/backend/node_modules/:/user/app/node_modules/
+    ports:
+      - 9002:9002
+    environment:
+      - PORT=9002

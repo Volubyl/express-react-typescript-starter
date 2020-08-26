@@ -1,0 +1,7 @@
+// This is just a icky workaround because there is no tsconfig at root level
+{
+    "eslint.workingDirectories": [
+        { "directory": "./packages/backend", "changeProcessCWD": true },
+        { "directory": "./packages/frontend", "changeProcessCWD": true }
+      ]
+}

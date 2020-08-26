@@ -17,7 +17,7 @@ debug('application:server');
 function normalizePort(val: string) {
   const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (Number.isNaN(port)) {
     // named pipe
     return val;
   }
@@ -60,21 +60,24 @@ app.set('port', port);
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error: any) {
-  if (error.syscall !== 'listen') {
-    throw error;
+// This is becaause serverError is not a regular Error
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function onError(serverError: any) {
+  const { error } = console;
+  if (serverError.syscall !== 'listen') {
+    throw serverError;
   }
 
   const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
 
   // handle specific listen errors with friendly messages
-  switch (error.code) {
+  switch (serverError.code) {
     case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
+      error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(`${bind} is already in use`);
+      error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:

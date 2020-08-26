@@ -13,11 +13,6 @@
     "eslint-config-airbnb-typescript-prettier": "^3.1.0",
     "lerna": "^3.22.1",
     "prettier": "^2.0.0",
-    "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "typescript": "^3.3.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.54"
+    "typescript": "^3.3.1"
   }
 }
